@@ -5,35 +5,17 @@
 <html manifest="manifest.appcache">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no,
-                                   initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Cache-control" content="public">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="theme.css">
+    
     <title>Try video</title>
-
-
-    <style type="text/css">
-      p {
-        color: red;
-        font-size: 30px;
-      }
-    </style>
 
 
   </head>
 
   <body>
-
-    <video autoplay controls src='http://people.mozilla.org/~mfinkle/casting/Mozilla_Firefox_Manifesto_v0.2_640.mp4'></video>
-    <p></p>
-
-    <script>
-      var p = document.querySelector('p');
-      var video = document.querySelector('video');
-      function log(e) {
-        console.log('e.type, video.duration =', e.type, video.duration);
-        p.innerHTML = p.innerHTML + 'e.type, video.duration =' + e.type + ', ' + video.duration + '<br/>';
-      }
-      video.addEventListener('loadedmetadata', log);
-      video.addEventListener('durationchange', log);
-    </script>
+    <p>This is to try HTTP Cache</p>
   </body>
 </html>
