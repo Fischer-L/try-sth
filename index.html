@@ -9,12 +9,14 @@
 
     <title>Try video</title>
 
+    <script src="libs/db-js/db.js"></script>
     <script src="index.js"></script>
 
   </head>
 
   <body>
-    <p>This is to try HTTP Cache</p>
-
+    <p>This is to try Storage API</p>
+    <button onclick="saveToIndexedDB(1000);">Save to indexedDB</button>
+    <button onclick="saveToLocalstorage(1000);">Save to localStorage</button>
   </body>
 </html>
