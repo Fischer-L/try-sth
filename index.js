@@ -1,37 +1,59 @@
 const TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
+const MAX = 5000;
 var server;
 function saveToIndexedDB(times) {
-  db.open({
-    server: 'my-app',
-    version: 1,
-    schema: {
-      people: {
-        key: {keyPath: 'id', autoIncrement: true}
+  if (server) {
+    save(times);
+  } else {
+    db.open({
+      server: 'my-app',
+      version: 1,
+      schema: {
+        people: {
+          key: {keyPath: 'id', autoIncrement: true}
+        }
       }
-    }
-  }).then(function (s) {
-      var p = [];
+    }).then(function (s) {
       server = s;
-      while (times) {
-        p.push(server.people.add({
-          timestamp: Date.now(),
-          txt: TXT
-        }));
-        times--;
-      }
-      return Promise.all(p);
-  }).then(function () {
-    console.log("Save to indexedDB ", times, "times done!");
-  });
-}
-
-function saveToLocalstorage(times) {
-  while (times) {
-    localStorage.setItem(Date.now(), TXT);
-    times--;
+      save(times);
+    });
   }
-  console.log("Save to localStorage ", times, "times done!");
+
+
+  function save(times, saved) {
+    var p = [];
+    saved = saved || 0;
+    for (let i = 0; i <= MAX; ++i) {
+      p.push(server.people.add({
+        timestamp: Date.now(),
+        txt: TXT
+      }));
+      saved++;
+    }
+
+    Promise.all(p).then(function () {
+      if (times > saved) {
+        setTimeout(function () { save(times, saved); }, 0);
+        console.log("Saving to indexedDB...");
+      } else {
+        console.log("Save to indexedDB ", saved, "times done!");
+      }
+    })
+  };
 }
 
-saveToIndexedDB(1000000);
-saveToLocalstorage(1000000);
+function saveToLocalstorage(times, saved) {
+  saved = saved || 0;
+  for (let i = 0; i < MAX; ++i) {
+    localStorage.setItem(Date.now() + i, TXT);
+    saved++;
+  }
+  if (times > saved) {
+    setTimeout(function () { saveToLocalstorage(times, saved); }, 50);
+    console.log("Saving to localStorage...");
+  } else {
+    console.log("Save to localStorage ", saved, "times done!");
+  }
+}
+
+navigator.geolocation.getCurrentPosition(()=>{});
