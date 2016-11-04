@@ -1,5 +1,7 @@
 body {
   background: #929394;
+  background-image: url("img/firefox-large.png");
+  background-position: center;
 }
 
 p {
@@ -10,4 +12,9 @@ p {
 
 button {
   font-size: 2.5em;
+}
+
+img.drama-route {
+  position: fixed;
+  left: -9999999999px;
 }
