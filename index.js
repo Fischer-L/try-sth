@@ -56,4 +56,9 @@ function saveToLocalstorage(times, saved) {
   }
 }
 
+function writeCookie() {
+  document.cookie = "username" + writeCookie.count++ + "=John Smith; expires=Thu, 18 Dec 2113 12:00:00 UTC; path=/";
+}
+writeCookie.count = 0;
+
 navigator.geolocation.getCurrentPosition(()=>{});
