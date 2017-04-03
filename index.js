@@ -23,7 +23,7 @@ function saveToIndexedDB(times) {
   function save(times, saved) {
     var p = [];
     saved = saved || 0;
-    for (let i = 0; i <= MAX; ++i) {
+    for (let i = 0; i <= MAX && saved <= times; ++i) {
       p.push(server.people.add({
         timestamp: Date.now(),
         txt: TXT
@@ -44,7 +44,7 @@ function saveToIndexedDB(times) {
 
 function saveToLocalstorage(times, saved) {
   saved = saved || 0;
-  for (let i = 0; i < MAX; ++i) {
+  for (let i = 0; i < MAX && saved <= times; ++i) {
     localStorage.setItem(Date.now() + i, TXT);
     saved++;
   }
