@@ -18,3 +18,9 @@ img.drama-route {
   position: fixed;
   left: -9999999999px;
 }
+
+a {
+  font-size: 30px;
+  display: inline-box;
+  margin-right: 10px
+}
