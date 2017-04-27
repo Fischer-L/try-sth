@@ -757,40 +757,44 @@ if (typeof Mozilla == "undefined") {
    * <li>sync
    * <li>advanced
    * </ul>
-   * @since 42
-   */
-  Mozilla.UITour.openPreferences = function(pane) {
-    _sendEvent("openPreferences", {
-      pane
-    });
-  };
-
-  /**
-   * @param {String} tabID - Optional.
-   * The id of the sub tab to open inside the advanced pane.
-   * the valid values are below and subject to change: <ul>
-   * <li> generalTab(default) - the General tab
+   *
+   * @param {String} advancedTab - The id of the sub tab in the advanced pane.
+   * Valid for the advanced pane and before Firefox 54(included).
+   * The Preferences page will have an new organization from Firefox 55.
+   * From Firefox 55, no more sub tabs in the advanced pan.
+   * For API users who wants to open advanced sub tab, say, the Data Choice tab in the old Preferences,
+   * please utilize `navigator.userAgent` to check Firefox version.
+   * Before Firefox 54(included), please call `openAdvancedPreferences("dataChoicesTab")`.
+   * After Firefox 55(included), please call `openPreferences("privacy-reports")`.
+   * the valid id values are below and subject to change:
+   * <ul>
+   * <li> generalTab - the General tab
    * <li> dataChoicesTab - the Data Choices tab
    * <li> networkTab - the Network tab
    * <li> updateTab - the Update tab
    * <li> encryptionTab - the Certificates tab
    * </ul>
-   * @since 54
+   *
+   * @since 42
    */
-   Mozilla.UITour.openAdvancedPreferences = function(tabID) {
-    let validTabs = [ "generalTab", "dataChoicesTab",
-                      "networkTab", "updateTab", "encryptionTab" ];
-    tabID = typeof tabID == "string" ? tabID : "generalTab";
-    if (validTabs.indexOf(tabID) < 0) {
-      throw `Open advanced Preferences with an invalid tab id of ${tabID}`;
+  Mozilla.UITour.openPreferences = function(pane, advancedTab) {
+    let extraArgs = undefined;
+    if (advancedTab && typeof advancedTab == "string") {
+      // Only do checking and init `data` if `advancedTab` was passed in.
+      let validTabs = [ "generalTab", "dataChoicesTab",
+                        "networkTab", "updateTab", "encryptionTab" ];
+      if (validTabs.indexOf(advancedTab) < 0) {
+        throw `Open advanced Preferences with an invalid tab id of ${advancedTab}`;
+      }
+      extraArgs = {
+        advancedTab
+      };
     }
     _sendEvent("openPreferences", {
-      pane: "advanced",
-      extraArgs : {
-        advancedTab: tabID
-      }
+      pane,
+      extraArgs
     });
-   };
+  };
 
   /**
    * @summary Closes the tab where this code is running. As usual, if the tab is in the
