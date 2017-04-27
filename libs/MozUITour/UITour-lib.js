@@ -764,7 +764,7 @@ if (typeof Mozilla == "undefined") {
    * From Firefox 55, no more sub tabs in the advanced pan.
    * For API users who wants to open advanced sub tab, say, the Data Choice tab in the old Preferences,
    * please utilize `navigator.userAgent` to check Firefox version.
-   * Before Firefox 54(included), please call `openAdvancedPreferences("dataChoicesTab")`.
+   * Before Firefox 54(included), please call `openPreferences("dataChoicesTab")`.
    * After Firefox 55(included), please call `openPreferences("privacy-reports")`.
    * the valid id values are below and subject to change:
    * <ul>
