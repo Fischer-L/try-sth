@@ -796,6 +796,15 @@ if (typeof Mozilla == "undefined") {
     });
   };
 
+  Mozilla.UITour.isOldPreferences = function() {
+    document.addEventListener("mozUITourResponse", function onResponse(e) {
+      document.removeEventListener("mozUITourResponse", onResponse);
+      console.log("isOldPreferences =", e.detail.isOldPreferences);
+    });
+    console.log("Asking isOldPreferences...");
+    _sendEvent("isOldPreferences");
+  },
+
   /**
    * @summary Closes the tab where this code is running. As usual, if the tab is in the
    * foreground, the tab that was displayed before is selected.
