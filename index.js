@@ -58,5 +58,6 @@ function saveToLocalstorage(times, saved) {
 
 function writeCookie() {
   document.cookie = "username" + writeCookie.count++ + "=John Smith; expires=Thu, 18 Dec 2113 12:00:00 UTC; path=/";
+  console.log("document.cookie =", document.cookie);
 }
 writeCookie.count = 0;
