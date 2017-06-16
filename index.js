@@ -15,7 +15,7 @@ function saveToIndexedDB(times) {
       }
     }).then(function (s) {
       server = s;
-      save(-1);
+      save(times);
     });
   }
 
