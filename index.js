@@ -2,6 +2,7 @@ var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUID
 var MAX = 5000;
 var server;
 function saveToIndexedDB(times) {
+  console.log(`Start saving for ${times} times...`);
   if (server) {
     save(times);
   } else {
