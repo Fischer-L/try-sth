@@ -62,3 +62,19 @@ function writeCookie() {
   console.log("document.cookie =", document.cookie);
 }
 writeCookie.count = 0;
+
+var dexieIndexedDB = {
+  db: null,
+  
+  async save(times, txt) {
+    if (!this.db) {
+      this.db = new Dexie("Dexie-MyFriendDB");
+      this.db.version(1).stores({
+        friends: '++id,name,age'
+      });
+      await this.db.open();
+    }
+    for (let i = 0; i < times; i++) this.db.friends.add({name: Date.now() + ("Foo" || txt), age: 42});
+    console.log(`Done with saving dexie indexedDB for ${times} times`);
+  }
+};
