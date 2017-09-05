@@ -3,8 +3,10 @@ var MAX = 5000;
 var server;
 function saveToIndexedDB(times) {
   console.log(`Start saving for ${times} times...`);
-  let i = times + 100;
-  console.log("i =", i);
+  this.i = times + 100;
+  this.j = this.i * 2;
+  this.i = this.j * 2;
+  console.log("i =", this.i);
   return;
   if (server) {
     save(times);
