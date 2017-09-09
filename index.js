@@ -1,13 +1,19 @@
+function testDebugger() {
+  let i = 1 + 100;
+  let j = i - 1;
+  let k = j * 10;
+  let l = k / 5;
+  let bool = i == j;
+  bool = j > k;
+  bool = k < l;
+  bool = j >= k;
+  bool = k <= l;
+}
+
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
 var MAX = 5000;
 var server;
 function saveToIndexedDB(times) {
-  console.log(`Start saving for ${times} times...`);
-  this.i = times + 100;
-  this.j = this.i * 2;
-  this.i = this.j * 2;
-  console.log("i =", this.i);
-  return;
   if (server) {
     save(times);
   } else {
