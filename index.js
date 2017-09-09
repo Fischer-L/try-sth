@@ -4,10 +4,10 @@ function testDebugger() {
   let k = j * 10;
   let l = k / 5;
   let bool = i == j;
-  bool = j > k;
-  bool = k < l;
-  bool = j >= k;
-  bool = k <= l;
+  let bool1 = j > k;
+  let bool2 = k < l;
+  let bool3 = j >= k;
+  let bool4 = k <= l;
 }
 
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
