@@ -1,17 +1,3 @@
-function testDebugger() {
-  let i = 1 + 100;
-  let j = i - 1;
-  let k = j * 10;
-  let l = k / 5;
-  let bool = i == j;
-  let bool1 = j > k;
-  let bool2 = k < l; 
-}
-
-// let bool3 = j >= k;
-// let bool4 = k <= l;
-testDebugger();
-
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
 var MAX = 5000;
 var server;
@@ -91,3 +77,15 @@ var dexieIndexedDB = {
     console.log(`Done with saving dexie indexedDB for ${times} times`);
   }
 };
+function testDebugger() {
+  let i = 1 + 100;
+  let j = i - 1;
+  let k = j * 10;
+  let l = k / 5;
+  let bool = i == j;
+  let bool1 = j > k;
+  let bool2 = k < l; 
+  let bool3 = j >= k;
+  let bool4 = k <= l;
+}
+testDebugger();
