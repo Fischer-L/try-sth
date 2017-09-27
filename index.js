@@ -1,5 +1,5 @@
 function testDebugger() {
-  // let i = 1 + 100;
+  let i = 1 + 100;
   let j = i - 1;
   let k = j * 10;
   let l = k / 5;
