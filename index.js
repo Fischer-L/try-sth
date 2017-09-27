@@ -5,10 +5,12 @@ function testDebugger() {
   let l = k / 5;
   let bool = i == j;
   let bool1 = j > k;
-  let bool2 = k < l;
-  let bool3 = j >= k;
+  let bool2 = k < l; 
 }
+
+// let bool3 = j >= k;
 // let bool4 = k <= l;
+testDebugger();
 
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
 var MAX = 5000;
