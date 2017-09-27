@@ -88,4 +88,3 @@ function testDebugger() {
   let bool3 = j >= k;
   let bool4 = k <= l;
 }
-testDebugger();
