@@ -1,3 +1,4 @@
+(function () {
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
 var MAX = 5000;
 var server;
@@ -88,3 +89,4 @@ function testDebugger() {
   let bool3 = j >= k;
   let bool4 = k <= l;
 }
+})();
