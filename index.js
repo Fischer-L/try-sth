@@ -1,8 +1,8 @@
-(function () {
+(function (win) {
 var TXT = "QWERTYUIOASDFGHJKLXCVBNMQWERTYUIODFGHJCVBNWERTYUISDFGHJ#$%^&*(ERTYUIDFGHJKCVBNFGHJ#$%^&DFGHJ#$%^&*(ERTYUIFDFGHJHGCCVBNNBFDDFGHJIUYTREERTYU&^%$#$%^UYDFGHGFCVB";
 var MAX = 5000;
 var server;
-function saveToIndexedDB(times) {
+win.saveToIndexedDB = (times) => {
   if (server) {
     save(times);
   } else {
@@ -43,7 +43,7 @@ function saveToIndexedDB(times) {
   };
 }
 
-function saveToLocalstorage(times, saved) {
+win.saveToLocalstorage = (times, saved) => {
   saved = saved || 0;
   for (let i = 0; i < MAX && saved <= times; ++i) {
     localStorage.setItem(Date.now() + i, TXT);
@@ -57,13 +57,13 @@ function saveToLocalstorage(times, saved) {
   }
 }
 
-function writeCookie() {
+win.writeCookie = () => {
   document.cookie = "username" + writeCookie.count++ + "=John Smith; expires=Thu, 18 Dec 2113 12:00:00 UTC; path=/";
   console.log("document.cookie =", document.cookie);
 }
-writeCookie.count = 0;
+win.writeCookie.count = 0;
 
-var dexieIndexedDB = {
+win.dexieIndexedDB = {
   db: null,
   
   async save(times, txt) {
@@ -78,7 +78,7 @@ var dexieIndexedDB = {
     console.log(`Done with saving dexie indexedDB for ${times} times`);
   }
 };
-function testDebugger() {
+win.testDebugger = () => {
   let i = 1 + 100;
   let j = i - 1;
   let k = j * 10;
@@ -89,4 +89,4 @@ function testDebugger() {
   let bool3 = j >= k;
   let bool4 = k <= l;
 }
-})();
+})(window);
