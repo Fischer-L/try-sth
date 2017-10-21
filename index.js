@@ -78,7 +78,7 @@ win.dexieIndexedDB = {
     console.log(`Done with saving dexie indexedDB for ${times} times`);
   }
 };
-win.testDebugger = () => {
+win.testDebugger=()=>{
   let i = 1 + 100;
   let j = i - 1;
   let k = j * 10;
