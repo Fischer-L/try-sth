@@ -14,7 +14,8 @@
     <script type="text/javascript">
       function checkActive() {
         setTimeout(function () {
-          p.innerHTML = "activeElement" + document.activeElement.id;
+          p.innerHTML = "activeElement " + document.activeElement.id;
+          inp.focus();
         }, 1000);
       }
       var p = document.querySelector("#p");
