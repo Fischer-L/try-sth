@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   </head>
   <body>
-    <input type="text" placeholder="Input">
-    <button style="width: 100px; height: 60px;">Focus Input</button>
+    <input id="inp" type="text" placeholder="Input">
+    <button id="btn" style="width: 100px; height: 60px;">Focus Input</button>
     <p id="p" style="font-size: 20px;"></p>
     <p>
       92
     </p>
     <script type="text/javascript">
+      function checkActive() {
+        setTimeout(function () {
+          p.innerHTML = "activeElement" + document.activeElement.id;
+        }, 1000);
+      }
       var p = document.querySelector("#p");
-      var inp = document.querySelector("input");
-      var btn = document.querySelector("button");
+      var inp = document.querySelector("#inp");
+      var btn = document.querySelector("#btn");
       btn.addEventListener("mouseup", function () {
         p.innerHTML = "mouseup: Focus input after 3 secs";
         setTimeout(function () {
           p.innerHTML = "mouseup: Focused input";
           inp.focus();
+          checkActive();
         }, 3000);
       });
 //       btn.addEventListener("touchend", function () {
