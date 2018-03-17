@@ -9,7 +9,7 @@
     <button style="width: 100px; height: 60px;">Focus Input</button>
     <p id="p" style="font-size: 20px;"></p>
     <p>
-      91
+      92
     </p>
     <script type="text/javascript">
       var p = document.querySelector("#p");
@@ -22,23 +22,23 @@
           inp.focus();
         }, 3000);
       });
-      btn.addEventListener("touchend", function () {
-        p.innerHTML = "touchend: Focus input after 3 secs";
-        setTimeout(function () {
-          p.innerHTML = "touchend: Focused input";
-          inp.focus();
-        }, 3000);
-      });
-      document.body.addEventListener("touchstart", function () {
-        p.innerHTML = "document.body touchstart";
-      });
-      document.addEventListener("touchend", function () {
-        p.innerHTML = "document touchend: Focus input after 3 secs";
-        setTimeout(function () {
-          p.innerHTML = "document touchend: Focused input";
-          inp.focus();
-        }, 3000);
-      });
+//       btn.addEventListener("touchend", function () {
+//         p.innerHTML = "touchend: Focus input after 3 secs";
+//         setTimeout(function () {
+//           p.innerHTML = "touchend: Focused input";
+//           inp.focus();
+//         }, 3000);
+//       });
+//       document.body.addEventListener("touchstart", function () {
+//         p.innerHTML = "document.body touchstart";
+//       });
+//       document.addEventListener("touchend", function () {
+//         p.innerHTML = "document touchend: Focus input after 3 secs";
+//         setTimeout(function () {
+//           p.innerHTML = "document touchend: Focused input";
+//           inp.focus();
+//         }, 3000);
+//       });
       p.innerHTML = "Loaded";
     </script>
   </body>
