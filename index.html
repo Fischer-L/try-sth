@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body>
+    <input type="text" placeholder="Input">
+    <button style="width: 100px; height: 30px;">Focus Input</button>
+    <p style="font-size: 20px;"></p>
+    <scritp>
+      let p = document.querySelector("p");
+      let inp = document.querySelector("input");
+      let btn = document.querySelector("button");
+      button.onclick = function () {
+        p.innerText = "Focus input after 3 secs";
+        setTimeout(function () {
+          p.innerText = "Focused input";
+          inp.focus();
+        }, 3000);
+      };
+    </script>
+  </body>
+</html>
