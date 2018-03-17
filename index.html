@@ -9,12 +9,12 @@
     <button style="width: 100px; height: 60px;">Focus Input</button>
     <p id="p" style="font-size: 20px;"></p>
     <p>
-      90
+      91
     </p>
     <script type="text/javascript">
-      let p = document.querySelector("#p");
-      let inp = document.querySelector("input");
-      let btn = document.querySelector("button");
+      var p = document.querySelector("#p");
+      var inp = document.querySelector("input");
+      var btn = document.querySelector("button");
       btn.addEventListener("mouseup", function () {
         p.innerHTML = "mouseup: Focus input after 3 secs";
         setTimeout(function () {
