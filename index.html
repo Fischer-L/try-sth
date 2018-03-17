@@ -20,5 +20,17 @@
         }, 3000);
       };
     </script>
+    <p>
+      let p = document.querySelector("p");
+      let inp = document.querySelector("input");
+      let btn = document.querySelector("button");
+      btn.onmouseup = function () {
+        p.innerText = "Focus input after 3 secs";
+        setTimeout(function () {
+          p.innerText = "Focused input";
+          inp.focus();
+        }, 3000);
+      };
+    </p>
   </body>
 </html>
