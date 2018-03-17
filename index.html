@@ -9,7 +9,7 @@
     <button id="btn" style="width: 100px; height: 60px;">Focus Input</button>
     <p id="p" style="font-size: 20px;"></p>
     <p>
-      96
+      97
     </p>
     <script type="text/javascript">
       function checkActive() {
@@ -21,7 +21,7 @@
       var p = document.querySelector("#p");
       var inp = document.querySelector("#inp");
       var btn = document.querySelector("#btn");
-      btn.addEventListener("mouseup", function () {
+      btn.addEventListener("mouseup", function () { return;
         p.innerHTML = "mouseup: Focus input after 3 secs";
         setTimeout(function () {
           p.innerHTML = "mouseup: Focused input";
