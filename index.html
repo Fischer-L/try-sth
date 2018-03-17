@@ -35,22 +35,10 @@
       });
     </script>
     <p>
-      let p = document.querySelector("p");
-      let inp = document.querySelector("input");
-      let btn = document.querySelector("button");
-      <br/>
-      btn.addEventListener("mouseup", function () {
-        p.innerText = "mouseup: Focus input after 3 secs";
+      document.addEventListener("touchend", function () {
+        p.innerText = "document touchend: Focus input after 3 secs";
         setTimeout(function () {
-          p.innerText = "mouseup: Focused input";
-          inp.focus();
-        }, 3000);
-      });
-      <br/>
-      btn.addEventListener("touchend", function () {
-        p.innerText = "touchend: Focus input after 3 secs";
-        setTimeout(function () {
-          p.innerText = "touchend: Focused input";
+          p.innerText = "document touchend: Focused input";
           inp.focus();
         }, 3000);
       });
