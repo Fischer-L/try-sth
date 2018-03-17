@@ -6,7 +6,7 @@
   </head>
   <body>
     <input type="text" placeholder="Input">
-    <button style="width: 100px; height: 30px;">Focus Input</button>
+    <button style="width: 100px; height: 60px;">Focus Input</button>
     <p style="font-size: 20px;"></p>
     <script type="text/javascript">
       let p = document.querySelector("p");
@@ -23,6 +23,13 @@
         p.innerText = "touchend: Focus input after 3 secs";
         setTimeout(function () {
           p.innerText = "touchend: Focused input";
+          inp.focus();
+        }, 3000);
+      });
+      document.addEventListener("touchend", function () {
+        p.innerText = "document touchend: Focus input after 3 secs";
+        setTimeout(function () {
+          p.innerText = "document touchend: Focused input";
           inp.focus();
         }, 3000);
       });
